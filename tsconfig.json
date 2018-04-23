@@ -1,0 +1,25 @@
+{
+  "version": "2.3.2",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "outDir": "build",
+    "baseUrl": "./src",
+    "paths": {
+      "@-/*": ["./*"]
+    }
+  },
+  "exclude": [
+    "build",
+    "config",
+    "node_modules",
+    "dev_server.js"
+  ]
+}
