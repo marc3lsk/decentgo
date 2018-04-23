@@ -8,8 +8,7 @@ export type FinalAction = "decentgo/FinalAction";
 export const FinalAction: FinalAction = "decentgo/FinalAction";
 
 export type DelayedQueuedAction = "decentgo/DelayedQueuedAction";
-export const DelayedQueuedAction: DelayedQueuedAction =
-  "decentgo/DelayedQueuedAction";
+export const DelayedQueuedAction: DelayedQueuedAction = "decentgo/DelayedQueuedAction";
 
 export type WebSocketConnectionAction = "decentgo/WebSocketConnectionAction";
 export const WebSocketConnectionAction: WebSocketConnectionAction =
@@ -19,8 +18,7 @@ export type IsLoggedInAction = "decentgo/IsLoggedInAction";
 export const IsLoggedInAction: IsLoggedInAction = "decentgo/IsLoggedInAction";
 
 export type DatabaseApiIdAction = "decentgo/DatabaseApiIdAction";
-export const DatabaseApiIdAction: DatabaseApiIdAction =
-  "decentgo/DatabaseApiIdAction";
+export const DatabaseApiIdAction: DatabaseApiIdAction = "decentgo/DatabaseApiIdAction";
 
 export type RegisterWebSocketCallback = "decentgo/RegisterWebSocketCallback";
 export const RegisterWebSocketCallback: RegisterWebSocketCallback =
@@ -52,7 +50,7 @@ export interface IDatabaseApiIdAction {
 
 export interface IRegisterWebSocketCallback {
   type: RegisterWebSocketCallback;
-  callback: (event) => any;
+  callback: (event: any) => any;
 }
 
 export type InternalAction =
@@ -70,9 +68,7 @@ export function makeFinalAction(finalAction: any): IFinalAction {
   return { type: FinalAction, finalAction };
 }
 
-export function makeDelayedQueuedAction(
-  delayedAction: any
-): IDelayedQueuedAction {
+export function makeDelayedQueuedAction(delayedAction: any): IDelayedQueuedAction {
   return { type: DelayedQueuedAction, delayedAction };
 }
 
@@ -86,14 +82,14 @@ export function makeIsLoggedInAction(): IIsLoggedInAction {
   return { type: IsLoggedInAction };
 }
 
-export function makeDatabaseApiIdAction(
-  databaseApiId: number
-): IDatabaseApiIdAction {
+export function makeDatabaseApiIdAction(databaseApiId: number): IDatabaseApiIdAction {
   return { type: DatabaseApiIdAction, databaseApiId };
 }
 
-export function makeRegisterWebSocketCallback(callback: (event: any) => any): IRegisterWebSocketCallback {
-  return { type: RegisterWebSocketCallback, callback}
+export function makeRegisterWebSocketCallback(
+  callback: (event: any) => any
+): IRegisterWebSocketCallback {
+  return { type: RegisterWebSocketCallback, callback };
 }
 
 //
@@ -130,7 +126,13 @@ export default function reducer(
       return {
         ...state,
         WebSocketRequestIdCounter: state.WebSocketRequestIdCounter + 1,
-        WebSocketCallbackMapping: { ...state.WebSocketCallbackMapping, [currentRequestIdCounter]: {WebSocketRequestIdCounter: currentRequestIdCounter, callback: action.callback } }
+        WebSocketCallbackMapping: {
+          ...state.WebSocketCallbackMapping,
+          [currentRequestIdCounter]: {
+            WebSocketRequestIdCounter: currentRequestIdCounter,
+            callback: action.callback
+          }
+        }
       };
     }
     default:
