@@ -6,7 +6,7 @@ import {
 } from "./model";
 import rootReducer from "./reducer";
 import middleware from "./middleware";
-import _middleware from "./fake-middleware";
+import fakeMiddleware from "./fake-middleware";
 import { loginStart } from "./reducer/login";
 import { fetchAccountList } from "./reducer/account-list";
 import { fetchAccountTransactionHistory } from "./reducer/account-transaction-history";
@@ -19,6 +19,7 @@ export {
   IDecentGoAccountTransactionHistory,
   rootReducer,
   middleware,
+  fakeMiddleware,
   loginStart,
   fetchAccountList,
   fetchAccountTransactionHistory,

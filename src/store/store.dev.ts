@@ -3,7 +3,7 @@ import { IAppState } from "./model";
 import { rootReducer } from "./reducer";
 import { routerMiddleware } from "react-router-redux";
 import { History } from "history";
-import { middleware as dgMiddleware } from "@-/service/decentgo";
+import { fakeMiddleware as dgMiddleware } from "@-/service/decentgo";
 
 interface IHotModule {
   hot?: { accept: (path: string, callback: () => void) => void };

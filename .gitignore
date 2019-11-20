@@ -1,3 +1,4 @@
+.vs/
 .vscode/
 .idea/
 .ideabuild/
@@ -8,3 +9,4 @@ tmp/
 dist/
 logs
 *.log
+package-lock.json
